@@ -1,0 +1,15 @@
+AddDefaultCharset utf-8
+
+# Включение режима переписывания URL
+RewriteEngine on
+
+# Переписывать URL начиная с корня сайта
+RewriteBase /
+
+#Не переписывать прямые URL к файлам и папкам
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Правила переписывания
+
+RewriteRule .* index.php?q=$0
